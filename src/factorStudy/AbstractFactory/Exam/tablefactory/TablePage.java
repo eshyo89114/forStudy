@@ -1,0 +1,31 @@
+package factorStudy.AbstractFactory.Exam.tablefactory;
+
+import factorStudy.AbstractFactory.Exam.factory.Item;
+import factorStudy.AbstractFactory.Exam.factory.Page;
+
+import java.util.Iterator;
+
+public class TablePage extends Page {
+
+    public TablePage(String title, String author){
+        super(title, author);
+    }
+
+    @Override
+    public String makeHTML() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("<html><head><meta charset=\"UTF-8\"><title>" + title +"</title></head>\n");
+        buffer.append("<body>\n");
+        buffer.append("<h1>" + title +"</h1>\n");
+        buffer.append("<table width =\"80%\" border=\"3\">\n");
+        Iterator it = content.iterator();
+        while(it.hasNext()){
+            Item item = (Item)it.next();
+            buffer.append("<tr>" + item.makeHTML() + "</tr>");
+        }
+        buffer.append("</table>\n");
+        buffer.append("<hr><address>" + author + "</address>");
+        buffer.append("</body></html>\n");
+        return buffer.toString();
+    }
+}
