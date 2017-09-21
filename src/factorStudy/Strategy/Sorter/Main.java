@@ -5,7 +5,7 @@ public class Main {
         String[] data = {
                 "Dumpty","Bowman","Carrorll","Elfland","Alice",
         };
-        
+
 
         SortAndPrint bap = new SortAndPrint(data, new BubbleSorter());
         bap.execute();
