@@ -24,7 +24,7 @@ public class demo1 {
 
             //将结果显示在控制台上
             while(rs.next()){
-                System.out.println(rs.getInt(1)+"\t"+
+                 System.out.println(rs.getInt(1)+"\t"+
                                     rs.getString(2)+"\t"+
                                     rs.getString(3));
             }
